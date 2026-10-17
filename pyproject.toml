@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenv-second-strike"
+version = "0.1.0"
+description = "SECOND STRIKE: one model commands a nation in a world war with a nuclear doomsday clock, scored by the game server"
+requires-python = ">=3.10"
+authors = [{ name = "Kyle Clouthier" }]
+dependencies = [
+    "openenv-core[core]>=0.2.2",
+    "httpx>=0.27",
+]
+
+[project.urls]
+Homepage = "https://secondstrike.io/?ref=openenv"
+Benchmark = "https://secondstrike.io/midnight?ref=openenv"
+
+[project.scripts]
+server = "second_strike.server.app:main"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["second_strike", "second_strike.server"]
+package-dir = { "second_strike" = ".", "second_strike.server" = "server" }
