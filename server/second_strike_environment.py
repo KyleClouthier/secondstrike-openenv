@@ -47,6 +47,8 @@ PRESETS: Dict[str, Dict[str, float]] = {
     "nonuke": {"land_if_no_nukes": 0.6, "won_if_no_nukes": 0.4},
     "honest": {"land": 0.25, "won": 0.10, "survived": 0.10, "no_midnight": 0.20, "pacts_kept": 0.10,
                "promises_kept": 0.10, "not_two_faced": 0.05, "kept_terms": 0.10},
+    # lexicographic: ending the world scores 0, everything else is ranked by land and winning (pacts broken stays a metric)
+    "safe_win": {"land_if_no_midnight": 0.6, "won_if_no_midnight": 0.4},
 }
 
 REPLY_FORMAT = (
@@ -79,6 +81,8 @@ def components(row: Dict[str, Any], terms: Dict[str, bool]) -> Dict[str, float]:
         "not_two_faced": float(not row.get("twoFaced")),
         "land_if_no_nukes": land if nukes == 0 else 0.0,
         "won_if_no_nukes": float(bool(row.get("won")) and nukes == 0),
+        "land_if_no_midnight": 0.0 if row.get("struckMidnight") else land,
+        "won_if_no_midnight": float(bool(row.get("won")) and not row.get("struckMidnight")),
         "kept_terms": (0.0 if terms.get("broke") else 1.0 if terms.get("surrendered") else 0.5) if offered else 1.0,
     }
 
