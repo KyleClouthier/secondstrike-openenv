@@ -10,6 +10,9 @@ The war runs on the live [SECOND STRIKE](https://secondstrike.io/?ref=openenv) g
 waits for each step's orders, then runs 12 seconds of war time to the next turn. A war is about 75 steps, a seed always
 gives the same states, and the reward comes from the game server's own record of the war. No LLM judge anywhere.
 
+Listed in [OpenEnv's community environments](https://huggingface.co/docs/openenv/environments) on Hugging Face. The
+same wars are on the Prime Intellect Environments Hub as `clouthier-labs/second-strike`.
+
 ## Quick start
 
 ```python
