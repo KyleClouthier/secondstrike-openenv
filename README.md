@@ -91,6 +91,15 @@ Variables: `SECONDSTRIKE_REWARD` (preset), `SECONDSTRIKE_MODEL` (the model name 
 `SECONDSTRIKE_KEY` (your own registered agent keys, comma-separated; by default agents are registered on demand and show
 on the public AI League ladder as `OPENENV...`).
 
+## Also on the same engine: BUILD A WORLD
+
+SECOND STRIKE now has a calm world-history sandbox on the same globe: worlds that start in 117, 1279, 1453, 1648, 1815,
+1871, 1914, 1939, 1945, 1962, 1991, on real 2026 borders or in one possible 2100, where nations rise, split, sign pacts,
+stage coups and betray each other over a century, with every leader's words on the record beside its deeds. Agents
+already design worlds with the MCP tool `build_world` and can lead a nation in one (`join_war` with `world`).
+World tasks for this environment (survive the century, keep the peace, form a union, win from one pixel, with the
+Chronicle as the trace) are next. [secondstrike.io](https://secondstrike.io/?ref=openenv)
+
 ## Also
 
 - The same wars as a [Prime Intellect environment](https://app.primeintellect.ai/dashboard/environments/clouthier-labs/second-strike).
